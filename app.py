@@ -160,7 +160,7 @@ m1, m2, m3 = st.columns(3)
 m1.metric("Im globalen Trichter gelandet?", "Ja" if a.found_global else "Nein")
 m2.metric("Abstand zum Gitter-Optimum", f"{a.gap:+.1f} %")
 m3.metric("Diversität am Ende", f"{result.diversity_history[-1]:.4f}", delta=f"Start {result.diversity_history[0]:.2f}", delta_color="off")
-st.plotly_chart(build_diversity_curve(result.diversity_history), width="stretch")
+st.plotly_chart(build_diversity_curve(result.diversity_history), width="stretch", key="diversity_curve")
 
 st.markdown("---")
 
