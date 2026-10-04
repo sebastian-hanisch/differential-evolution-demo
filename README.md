@@ -66,8 +66,8 @@ verlässlich nahe an 0 - kein Generation-für-Generation-Gleichlauf behauptet (u
   MOEA/Ds externes Archiv) keinen Mechanismus, das zu erkennen oder zu korrigieren.
 - **Struktureller Mindestbedarf NP≥4** - die Mutation braucht drei verschiedene, vom Ziel-Individuum verschiedene
   Populationsmitglieder.
-- **Kein Nachfolger in dieser Demo geplant** - der geplante Fix-Nachfolger L-SHADE (selbstadaptives F/CR) ist ein
-  separates, noch nicht gebautes Stück. DE ist außerdem ein Geschwister von CMA-ES und Partikelschwarm-Optimierung
+- **Kein Nachfolger in dieser Demo geplant** - der Fix-Nachfolger L-SHADE (selbstadaptives F/CR) ist ein
+  separates, bereits gebautes Stück (`l-shade-demo`). DE ist außerdem ein Geschwister von CMA-ES und Partikelschwarm-Optimierung
   (beide ebenfalls Kontrast-Kinder von GA für kontinuierliche Landschaften).
 
 ## Tests
@@ -93,7 +93,7 @@ Preset, Generation-Slider inkl. Abspielen, Permalink-Grenzen, beide Experimente 
 
 ## Bewusst nicht umgesetzt
 
-- L-SHADE (selbstadaptives F/CR) - geplanter Fix-Nachfolger, separates Stück.
+- L-SHADE (selbstadaptives F/CR) - Fix-Nachfolger, separates (bereits gebautes) Stück: `l-shade-demo`.
 - Alternative Bounds-Handhabung (Reflexion, Neuziehen statt Clipping).
 - Restart-Strategien oder ein externes Archiv bei Stagnation.
 - Ein PDF-Export - wie bei den anderen Konzepte-Demos dieses Portfolios nicht Teil der Linie.
@@ -108,3 +108,7 @@ streamlit run app.py
 ```
 
 Gebaut mit Streamlit, Plotly und numpy.
+
+---
+
+Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). Mehr zur Reihe: [Populations-Metaheuristiken: GA bis Memetic](https://sebastianhanisch.net/konzepte-populations-metaheuristiken.html).

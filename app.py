@@ -169,7 +169,7 @@ st.markdown("---")
 st.subheader("📐 Wie stark hängt die Trefferquote von Populationsgröße und Differenzgewicht ab?")
 sweep_param = st.selectbox("Welcher Regler soll durchgefahren werden?", list(C.SWEEP_LABELS), format_func=lambda k: C.SWEEP_LABELS[k], key="sweep_select")
 base_sweep = Settings(seed=settings.seed, gens=settings.gens, pop=settings.pop, f=settings.f, cr=settings.cr)
-if st.button("Sweep über 5 feste Vehikel berechnen (dauert etwa 10 bis 30 Sekunden)", key="sweep_start"):
+if st.button("Sweep über 5 Zufallsläufe berechnen (dauert etwa 10 bis 30 Sekunden)", key="sweep_start"):
     st.session_state["sweep_done"] = st.session_state.get("sweep_done", set()) | {(sweep_param, base_sweep)}
 if (sweep_param, base_sweep) in st.session_state.get("sweep_done", set()):
     with st.spinner("Rechne den Sweep..."):
@@ -197,7 +197,7 @@ if st.session_state.get("comparison_on"):
     c2.metric(f"DE, {report['de_large_evals']} Auswertungen", f"{report['de_large']:.0%}", delta=f"GA {report['ga_large']:.0%} · CMA-ES {report['cma_large']:.0%}", delta_color="off")
     st.warning(
         "**Ehrlicher Befund:** Mit Standardeinstellungen trifft DE hier bei BEIDEN Budgets zuverlässig die globale Mulde - "
-        "deutlich robuster als CMA-ES (das nur eine einzige Gauß-Glocke verfolgt) und auch klar vor GA. Der Grund ist "
+        "deutlich robuster als CMA-ES (das nur eine einzige Gauß-Glocke verfolgt) und beim kleinen Budget auch klar vor GA (beim großen liegt GA mit 95 % nur knapp dahinter). Der Grund ist "
         "strukturell: wie GA hält DE eine über den Raum verstreute Population, jedes Individuum hat eine eigene Chance "
         "auf die richtige Mulde - und die Differenzvektor-Mutation nutzt die Streuung selbst als Schrittweiten-Signal, "
         "ohne dass eine einzelne Verteilung vorzeitig kollabieren kann. Das ist kein Beweis, dass DE grundsätzlich besser "
@@ -236,8 +236,8 @@ st.markdown(
 )
 st.caption(
     "DE ist ein Geschwister von CMA-ES und Partikelschwarm-Optimierung (beide ebenfalls Kontrast-Kinder von GA für "
-    "kontinuierliche Landschaften) - der geplante Fix-Nachfolger L-SHADE (selbstadaptives F/CR) ist ein separates, "
-    "noch nicht gebautes Stück. Vorgänger: "
+    "kontinuierliche Landschaften) - der Fix-Nachfolger L-SHADE (selbstadaptives F/CR) ist ein separates, "
+    "bereits gebautes Stück ([l-shade-demo](https://sebastianhanisch-l-shade-demo.streamlit.app/)). Vorgänger: "
     "[genetic-algorithm-demo](https://sebastianhanisch-genetic-algorithm-demo.streamlit.app/) und "
     "[cma-es-demo](https://sebastianhanisch-cma-es-demo.streamlit.app/), deren Befunde hier direkt verglichen werden."
 )
@@ -263,6 +263,6 @@ Implementiert in `de_algorithm.py` (Mutation, Rekombination, Hauptschleife), `de
 st.markdown("---")
 st.caption(
     "Diese Demo ist Teil des Portfolios von [Sebastian Hanisch](https://sebastianhanisch.net) – "
-    "Operations Research und Machine Learning. Interesse an einer maßgeschneiderten Lösung für "
-    "Ihr Unternehmen? [Kontakt aufnehmen](https://sebastianhanisch.net/kontakt.html)"
+    "Operations Research und Machine Learning ([Über mich](https://sebastianhanisch.net/ueber-mich.html)). "
+    "Mehr zur Reihe: [Populations-Metaheuristiken: GA bis Memetic](https://sebastianhanisch.net/konzepte-populations-metaheuristiken.html)."
 )
