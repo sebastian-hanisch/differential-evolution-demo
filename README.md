@@ -72,7 +72,7 @@ verlässlich nahe an 0 - kein Generation-für-Generation-Gleichlauf behauptet (u
 
 ## Tests
 
-58 Tests (`pytest tests/ -v`): Mutation/Crossover per Handrechnung an einer konstruierten Population geprüft,
+66 Tests (`pytest tests/ -v`): Mutation/Crossover per Handrechnung an einer konstruierten Population geprüft,
 Konvergenz auf Kugel-/Ellipsoid-Funktion (eigene Implementierung UND `scipy.optimize.differential_evolution` im
 Vergleich), Szenario-Erzeugung bitidentisch zu genetic-algorithm-demo/cma-es-demo geprüft, AppTest-Rauchtests (jedes
 Preset, Generation-Slider inkl. Abspielen, Permalink-Grenzen, beide Experimente + Sweep auf Abruf) und
